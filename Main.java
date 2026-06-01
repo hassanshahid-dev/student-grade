@@ -6,8 +6,17 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter Student Name: ");
-        String name = input.nextLine();
+        try {
+
+            int marks = input.nextInt();
+
+            if(marks < 0 || marks > 100)
+                throw new Exception("Invalid Marks");
+
+            } catch(Exception e) {
+
+                System.out.println(e.getMessage());
+            }
 
         System.out.print("Enter Marks: ");
         int marks = input.nextInt();
@@ -32,7 +41,7 @@ public class Main {
         else
             System.out.println("Status: Fail");
 
-                System.out.println("Student: " + name);
+                System.out.println("Student: " + marks);
                 System.out.println("Grade: " + grade);
             }
 }
